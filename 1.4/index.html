@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<form>
+<input name="" type="checkbox" />
+<input name="" type="radio" />
+<input name="" type="text" />
+<input name="" type="checkbox" />
+</form>
+
+<form>
+<input name="" type="checkbox" />
+<input name="" type="radio" />
+<input name="" type="text" />
+<input name="" type="checkbox" />
+</form>
+
+<input name="" type="checkbox" />
+<input name="" type="radio" />
+<input name="" type="text" />
+<input name="" type="checkbox" />
+
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript">
+//8
+alert('selected' + jQuery('input', $('form')).length + 'inputs');
+
+//4
+alert('selected' + jQuery('input', document.forms[0]).length + 'inputs');
+
+//12
+alert('selected' + jQuery('input', 'body').length + 'inputs');
+
+</script>
+</body>
+</html>

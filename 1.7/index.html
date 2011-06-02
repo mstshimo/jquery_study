@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>text</p>
+<p class="middle">Middle <span>text</span></p>
+<p>text</p>
+
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript">
+//1
+alert($('p').filter('.middle').length);
+
+//3
+alert($('p').filter('.middle').end().length);
+
+//3
+alert($('p').filter('.middle').find('span').end().end().length);
+
+</script>
+</body>
+</html>
