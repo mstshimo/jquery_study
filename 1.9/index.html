@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+<div>
+<ul>
+
+<li><a href="#">link1</a></li>
+<li><a href="#">link2</a></li>
+<li><a href="#">link3</a></li>
+<li><a href="#">link4</a></li>
+<li><a href="#">link5</a></li>
+
+</ul>
+</div>
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+
+<script type="text/javascript">
+//
+alert( jQuery('li:eq(1)').next().text() ); //3つめ
+
+alert( jQuery('li:eq(1)').prev().text() ); //1つめ
+
+alert( jQuery('li:eq(1)').parent().text() ); //ul
+
+alert( jQuery('li:eq(1)').parent().children().text() ); //すべてのli
+
+alert( jQuery('li:eq(1)').nextAll().text() ); //2つめのliの後ろ全てのli
+
+alert( jQuery('li:eq(1)').prevAll().text() ); //2つめのliの前の全てのli
+
+</script>
+</body>
+</html>

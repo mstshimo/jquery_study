@@ -1,0 +1,33 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<ul id="a">
+<li>list</li>
+<li>list</li>
+<li>list</li>
+<li>list</li>
+</ul>
+<ul id="b">
+</ul>
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+//
+jQuery('ul#a li')
+.click(function(){alert('List Item Clicked')})
+.parent()
+.clone(true)
+.find('li')
+.appendTo('#b')
+.end()
+.end()
+.end()
+.remove();
+
+
+</script>
+</body>
+</html>
