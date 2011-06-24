@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div id="content">
+	<h1>Mail Title</h1>
+	<h2>Section Title1</h2>
+	<p>Some content</p>
+	<h2>Section Title2</h2>
+	<p>More content</p>
+
+</div>
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+	// 隣接するh2のみ
+	alert($('h1 + h2').text());
+
+	alert($('h1').siblings().text());
+
+})(jQuery)
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<a href="/category">category</a>
+<ul id="nav">
+	<li><a href="#anchor1">Anchor 1</a></li>
+	<li><a href="#anchor2">Anchor 2</a></li>
+	<li><span><a href="#anchor3">Anchor 3</a></span></li>
+</ul>
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+//	$('#nav li > a').replaceWith('<b>入れ替え</b>');
+
+	var li = $('#nav li');
+//	li.children().replaceWith('<b>入れ替え</b>');
+	
+
+//	$('> * ', li).replaceWith('<b>入れ替え</b>');
+
+	li.find('> *').replaceWith('<b>入れ替え</b>');
+	
+
+})(jQuery)
+</script>
+</body>
+</html>
