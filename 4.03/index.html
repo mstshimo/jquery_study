@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+a
+<div id="months">
+</div>
+
+<hr />
+<div id="poge_month">
+</div>
+
+<div id="days">
+</div>
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+	$(function(){
+		var months = [
+			'Janualry', 'February', 'March', 'April', 'May', 'June',
+			'July', 'August', 'September', 'October', 'November', 'December'
+		];
+
+		var hoge = $.grep(months, function(value, i){
+			return (value.indexOf('J') == 0);
+		});
+
+		$("#months").html('<li>' + hoge.join('</li><li>') + '</li>');
+
+		var poge = $.grep(months, function(value, i){
+			return (i % 2 == 0);
+		});
+
+		$("#poge_month").html('<li>' + poge.join('</li><li>') + '</li>');
+
+	});
+})(jQuery)
+</script>
+</body>
+</html>
