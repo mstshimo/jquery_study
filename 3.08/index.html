@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+.pics {
+	height:232px;
+	whidth:232px;
+	padding:0px;
+	margin:0px;
+}
+
+.pcs img {
+	padding:15px;
+	border:1px solid #ccc;
+	background-color: #eee;
+	width:200px;
+	height:200px;
+	top:0;
+	left:0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="pics">
+	<img src="images/beach1.jpg" width="200" height="200" alit="beach1">
+	<img src="images/beach2.jpg" width="200" height="200" alit="beach2">
+	<img src="images/beach3.jpg" width="200" height="200" alit="beach3">
+
+</div>
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="/jquery_study/common/jquery.cycle.all.js"></script>
+<script type="text/javascript">
+(function($){
+	$(function(){
+		$('.pics').cycle({fx:'scrollUp', speed:400, timeout:2000});
+	});
+})(jQuery)
+
+</script>
+</body>
+</html>

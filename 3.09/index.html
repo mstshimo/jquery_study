@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+This is div.
+</div>
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+
+	$.fn.ShowQuery = function(i) {
+		alert("$(\"" + $(this).selector + "\"," + $(this).context + ")");
+		if (i < 3) {
+			$($(this).selector, $(this).context).ShowQuery(i+1);
+		}
+	};
+
+	$("div").ShowQuery(1);
+
+})(jQuery)
+</script>
+</body>
+</html>
