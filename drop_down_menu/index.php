@@ -5,10 +5,10 @@
 $(function(){
     $("ul.sub").hide();
     $("ul.menu li").hover(function(){
-            $("ul:not(:animated)",this).slideDown("fast")
+            $("ul.sub:not(:animated)", this).slideDown("fast")
         },
         function(){
-            $("ul",this).slideUp("fast");
+            $("ul.sub:not(:animated)", this).slideUp("fast");
     })
 })
 
@@ -71,14 +71,14 @@ ul.menu:after {
 				<li><a href="#">サブメニューA</a></li>
 			</ul>
 		</li>
-		<li><a href="#">メニューB</a>
+		<li><a href="javascript:void(0);">メニューB</a>
 			<ul class="sub">
 				<li><a href="#">サブメニューB</a></li>
 				<li><a href="#">サブメニューB</a></li>
 				<li><a href="#">サブメニューB</a></li>
 			</ul>
 		</li>
-		<li><a href="#">メニューC</a>
+		<li><a href="javascript:void(0);">メニューC</a>
 			<ul class="sub">
 				<li><a href="#">サブメニューC</a></li>
 				<li><a href="#">サブメニューC</a></li>
