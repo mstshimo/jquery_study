@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+.reveal{
+	display:none;
+}
+</style>
+</head>
+<body>
+
+<span class="reveal">Ready?</span>
+<span class="reveal">On your mark!</span>
+<span class="reveal">Get set!</span>
+<span class="reveal">Go!</span>
+
+<script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+(function($){
+
+	jQuery.slowEach = function(array, interval, callback) {
+		if (! array.length) return;
+
+		var i = 0;
+		next();
+
+		function next() {
+			if (callback.call(array[i], i, array[i]) !== false) {
+				if(++i < array.length) {
+					setTimeout(next, interval);
+				}
+			}
+		}
+
+		return;
+	};
+
+	jQuery.fn.slowEach = function(interval, callback){
+		return jQuery.slowEach(this, interval, callback);
+	};
+
+
+})(jQuery)
+
+</script>
+<script type="text/javascript">
+(function($){
+
+	$(".reveal").slowEach(1000, function() {
+		$(this).show();
+	});
+
+})(jQuery)
+
+</script>
+</body>
+</html>
