@@ -19,6 +19,7 @@
 <script type="text/javascript">
 (function($){
 
+	// カスタムイテレータの実装
 	jQuery.slowEach = function(array, interval, callback) {
 		if (! array.length) return;
 
@@ -36,6 +37,7 @@
 		return;
 	};
 
+	// カスタムイテレータ
 	jQuery.fn.slowEach = function(interval, callback){
 		return jQuery.slowEach(this, interval, callback);
 	};
