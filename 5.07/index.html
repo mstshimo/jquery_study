@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transtionam//EN" "http://www.w3.org/TR/xtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+</style>
+</head>
+ <script type="text/javascript" src="/jquery_study/common/jquery-1.6.1.min.js"></script>
+<!--
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.js"></script>
+ -->
+<body>
+
+
+<form>
+<input type="button" value="ボタン" class="testbutton" /><br />
+
+<input type="checkbox" name="fruit" value="apple" checked="true" class="toggleme" />apple
+<input type="checkbox" name="fruit" value="orange" checked="false" class="toggleme" />orange
+<input type="checkbox" name="fruit" value="melon"  class="toggleme"  />melon
+<input type="checkbox" name="fruit" value="strawberry" checked="checked" class="toggleme" />strawberry
+<input type="checkbox" name="fruit" value="strawberry"  disabled="disabled" class="test" />test
+<input type="text" name="fruit" value="hogehoge"  disabled="disabled" class="testtext" /></text>
+
+</form>
+
+
+</body>
+
+<script type="text/javascript">
+(function($){
+	/*
+	 * チェックボックスのチェックを切り替える
+	 */
+	jQuery.fn.toggleCheck = function (check) {
+		return this._toggleAttr('checked', true, false, check);
+	};
+
+
+	/*
+	 * 属性を変更する
+	 */
+	jQuery.fn._toggleAttr = function (name, onValue, offValue, on) {
+		function set ($element, status) {
+console.log(status);
+console.log(name);
+
+			return status ? $element.removeAttr(name) : $element.attr('checked', 'checked');
+		}
+
+		return on !== undefined ?
+			set (this, on) : 
+			this.each(function (i, element) {
+
+				// キャッシュする
+				var $element = $(element);
+
+console.log(i);
+console.log($element.attr(name));
+
+				set ($element, $element.attr(name) !== undefined );
+			});
+	};
+
+
+	/*
+	 * 有効/無効を切り替える
+	 */
+	jQuery.fn.toggleEnable = function (enable) {
+		return this.toggleAttr('disabled', false, true, enable);
+	};
+})(jQuery);
+
+</script>
+<script type="text/javascript">
+(function($){
+
+	$(".testbutton").click(
+		function (event) {
+			$('.toggleme').toggleCheck();
+		}
+	);
+
+})(jQuery);
+
+
+</script>
+
+</html>
