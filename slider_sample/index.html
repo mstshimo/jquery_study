@@ -25,6 +25,10 @@
 <!--
 jQuery( function() {
 	var MAX = 100;
+	var first;
+	var second;
+	var third;
+
     jQuery( '#jquery-ui-slider' ) . slider( {
         range: true,
         values: [ 30, 60 ],
@@ -32,21 +36,23 @@ jQuery( function() {
         max: MAX,
         step: 10,
         slide: function( event, ui ) {
-            jQuery( '#jquery-ui-slider-values-a' ).val(ui.values[0]);
-			jQuery( '#jquery-ui-slider-values-b' ).val(ui.values[1] -  ui.values[0]);
-			jQuery( '#jquery-ui-slider-values-c' ).val(MAX - ui.values[1] );
+			first = ui.values[0];
+			second = ui.values[1] -  ui.values[0];
+			third = MAX - ui.values[1];
+
+            jQuery( '#jquery-ui-slider-values-a' ).val(first);
+			jQuery( '#jquery-ui-slider-values-b' ).val(second);
+			jQuery( '#jquery-ui-slider-values-c' ).val(third);
         }
     } );
 
-	var first = jQuery('#jquery-ui-slider').slider('values', 0);
-	var second = jQuery('#jquery-ui-slider').slider('values', 1) - first;
-	var third = jQuery('#jquery-ui-slider').slider('option', 'max') - second;
+	first = jQuery('#jquery-ui-slider').slider('values', 0);
+	second = jQuery('#jquery-ui-slider').slider('values', 1) - first;
+	third = jQuery('#jquery-ui-slider').slider('option', 'max') - jQuery('#jquery-ui-slider').slider('values', 1);
 
 	// 初期表示
 	jQuery('#jquery-ui-slider-values-a').val(first);
-
 	jQuery('#jquery-ui-slider-values-b').val(second);
-
 	jQuery('#jquery-ui-slider-values-c').val(third);
 
 } );
@@ -57,9 +63,9 @@ jQuery( function() {
 
 <body>
 
-<p>担当A：歩合：<input type="text" id="jquery-ui-slider-values-a" /></p>
-<p>担当B：歩合：<input type="text" id="jquery-ui-slider-values-b" /></p>
-<p>担当C：歩合：<input type="text" id="jquery-ui-slider-values-c" /></p>
+<p>担当A：歩合：<input type="text" id="jquery-ui-slider-values-a"  style="border:0; color:#f6931f; font-weight:bold;" /></p>
+<p>担当B：歩合：<input type="text" id="jquery-ui-slider-values-b"  style="border:0; color:#f6931f; font-weight:bold;" /></p>
+<p>担当C：歩合：<input type="text" id="jquery-ui-slider-values-c"  style="border:0; color:#f6931f; font-weight:bold;" /></p>
 <div id="jquery-ui-slider"></div>
 
 
