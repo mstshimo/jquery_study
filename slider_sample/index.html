@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<link rel="stylesheet" href="jquery-ui-1.8.16.custom.css" />
+<script type="text/javascript" src="jquery-1.7.1.js"></script>
+<script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script>
+<title></title>
+<style>
+<!--
+#jquery-ui-slider-values {
+    border: 0;
+    color: red !important;
+    font-weight: bold;
+    background-color: transparent;
+    margin: 5px;
+}
+#jquery-ui-slider {
+    margin: 0 900px;
+	margin-left:auto;
+}
+-->
+</style>
+
+<script>
+<!--
+jQuery( function() {
+	var MAX = 100;
+    jQuery( '#jquery-ui-slider' ) . slider( {
+        range: true,
+        values: [ 30, 60 ],
+        min: 0,
+        max: MAX,
+        step: 10,
+        slide: function( event, ui ) {
+            jQuery( '#jquery-ui-slider-values-a' ).val(ui.values[0]);
+			jQuery( '#jquery-ui-slider-values-b' ).val(ui.values[1] -  ui.values[0]);
+			jQuery( '#jquery-ui-slider-values-c' ).val(MAX - ui.values[1] );
+        }
+    } );
+
+	var first = jQuery('#jquery-ui-slider').slider('values', 0);
+	var second = jQuery('#jquery-ui-slider').slider('values', 1) - first;
+	var third = jQuery('#jquery-ui-slider').slider('option', 'max') - second;
+
+	// 初期表示
+	jQuery('#jquery-ui-slider-values-a').val(first);
+
+	jQuery('#jquery-ui-slider-values-b').val(second);
+
+	jQuery('#jquery-ui-slider-values-c').val(third);
+
+} );
+// -->
+</script>
+
+</head>
+
+<body>
+
+<p>担当A：歩合：<input type="text" id="jquery-ui-slider-values-a" /></p>
+<p>担当B：歩合：<input type="text" id="jquery-ui-slider-values-b" /></p>
+<p>担当C：歩合：<input type="text" id="jquery-ui-slider-values-c" /></p>
+<div id="jquery-ui-slider"></div>
+
+
+<body>
+</html>
